@@ -76,10 +76,18 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        FormScreen(),
-                        //SimpleDatePicker(),
-                        NationalityDropdownList(),
-                        RoomDeatils(),
+                        SizedBox(
+                          height: 55,
+                            child: FormScreen()),
+                        SizedBox(
+                            height: 50,
+                            child: SimpleDatePicker()),
+                        SizedBox(
+                            height: 50,
+                            child: NationalityDropdownList()),
+                        SizedBox(
+                            height: 50,
+                            child: RoomDeatils()),
 
 
                       ],

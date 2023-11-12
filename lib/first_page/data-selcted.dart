@@ -32,48 +32,55 @@ class _SimpleDatePickerState extends State<SimpleDatePicker>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: OutlinedButton(
-          style: OutlinedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(13.0),
-            ),
-            side: const BorderSide(
-              width: 2.0,
-              color: Colors.blue,
-            ),
+      body: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20)
           ),
-
-          onPressed: () {
-            showDateRangePicker(
-              context: context,
-              firstDate: DateTime(2021),
-              lastDate: DateTime(2022),
-              initialDateRange: DateTimeRange(
-                start: _startDate.value ?? DateTime.now(),
-                end: _endDate.value ?? DateTime.now(),
+          child: OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(13.0),
               ),
-            ).then(_selectDateRange);
+              side: const BorderSide(
+                width: 2.0,
+                color: Colors.blue,
+              ),
+            ),
 
-          },
-          child:  Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(width: 20,),
-             // Text('Open Date Range Picker', ),
-              Text(
-                ' ${_startDate.value?.toString() }==> '
-                    ,
-                style: TextStyle(
-                    color: Colors.blue,
-                    fontWeight: FontWeight.w500
+            onPressed: () {
+              showDateRangePicker(
+                context: context,
+                firstDate: DateTime(2021),
+                lastDate: DateTime(2022),
+                initialDateRange: DateTimeRange(
+                  start: _startDate.value ?? DateTime.now(),
+                  end: _endDate.value ?? DateTime.now(),
                 ),
-              ),
-              Spacer(),
-              Icon(Icons.clear,color: Colors.blue),
-            ],
-          ),
+              ).then(_selectDateRange);
 
+            },
+            child:  Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(width: 20,),
+               // Text('Open Date Range Picker', ),
+                Text(
+                  ' ${_startDate.value?.toString() }==> '
+                      ,
+                  style: TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.w500
+                  ),
+                ),
+                Spacer(),
+                Icon(Icons.clear,color: Colors.blue),
+              ],
+            ),
+
+          ),
         ),
       ),
     );
