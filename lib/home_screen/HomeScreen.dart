@@ -1,9 +1,9 @@
-import 'package:assignment_task/home_screen/DataSelcted.dart';
-import 'package:assignment_task/home_screen/DropdownList.dart';
-import 'package:assignment_task/home_screen/roam-detailes.dart';
+import 'package:assignment_task/first_page/data-selcted.dart';
+import 'package:assignment_task/first_page/dropdown-list.dart';
+import 'package:assignment_task/first_page/roam-detailes.dart';
 import 'package:flutter/material.dart';
 
-import 'form.dart';
+import '../first_page/form.dart';
 
 class HomeScreen extends StatelessWidget {
 
@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             fit:BoxFit.fill,
-            image: AssetImage('assets/images/attachment3.jpg',
+            image: AssetImage('assets/images/background.jpg',
             )
           )
         ),
@@ -44,13 +44,15 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Row(mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('find hotels',
-                              style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500)),
-                          SizedBox(width: 10,),
-                          Icon(Icons.search,color: Colors.white),
-                        ],
+                      InkWell(
+                        child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('find hotels',
+                                style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500)),
+                            SizedBox(width: 10,),
+                            Icon(Icons.search,color: Colors.white),
+                          ],
+                        ),onTap: (){},
                       ),
                       SizedBox(height: 10,)
                     ],
@@ -72,9 +74,10 @@ class HomeScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         FormScreen(),
+                        //SimpleDatePicker(),
                         NationalityDropdownList(),
                         RoomDeatils(),
 

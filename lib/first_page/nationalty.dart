@@ -26,7 +26,6 @@ class _NationalityDropdownState extends State<NationalityDropdown> {
       elevation: 0,
       style: const TextStyle(color: Colors.deepPurple),
       onChanged: (String? value) {
-        // This is called when the user selects an item.
         setState(() {
           dropdownValue = value!;
         });

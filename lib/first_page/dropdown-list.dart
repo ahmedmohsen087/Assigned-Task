@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'Nationalty.dart';
+import 'nationalty.dart';
 
 
 class NationalityDropdownList extends StatelessWidget {

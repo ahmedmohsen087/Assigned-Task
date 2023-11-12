@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../secand _page/rooms-guest.dart';
+import '../secand _page/switch-page.dart';
+
 class RoomDeatils extends StatelessWidget {
 
   @override
@@ -20,7 +23,17 @@ class RoomDeatils extends StatelessWidget {
               fontWeight: FontWeight.w500
           ),),
           SizedBox(width: 20,),
-          Icon(Icons.keyboard_arrow_down_sharp)
+          InkWell(
+            onTap: (){
+              showModalBottomSheet(
+                  context: context,
+                  isScrollControlled: true,
+                  builder: (context) {
+                    return BottomSheetApp();
+                  },
+              );
+            },
+              child: Icon(Icons.keyboard_arrow_down_sharp))
         ],
       ),
     );
