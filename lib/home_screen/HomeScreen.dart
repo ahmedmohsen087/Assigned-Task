@@ -1,6 +1,7 @@
 import 'package:assignment_task/first_page/data_selected.dart';
 import 'package:assignment_task/first_page/dropdown_list.dart';
 import 'package:assignment_task/first_page/roam_details.dart';
+import 'package:assignment_task/home_screen/sloping_container.dart';
 import 'package:flutter/material.dart';
 import '../first_page/form.dart';
 
@@ -25,17 +26,7 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                decoration: const BoxDecoration(
-                  color: Colors.blue,
-                ),
-                padding: const EdgeInsets.all(18),
-                child: const Text('Hotels Search',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white)),
-              ),
+              SlopingContainer(),
               const SizedBox(
                 height: 5,
               ),
