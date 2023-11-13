@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import '../second _page/rooms_guest.dart';
 
-import 'nationality.dart';
-
-class NationalityDropdownList extends StatelessWidget {
-  const NationalityDropdownList({super.key});
+class RoomDetails extends StatelessWidget {
+  const RoomDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,12 +10,12 @@ class NationalityDropdownList extends StatelessWidget {
       width: double.infinity,
       height: 70,
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(15)),
+          color: Colors.white, borderRadius: BorderRadius.circular(25)),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           const Text(
-            'Select Nationality ',
+            '1 Room,2 Adult,0 Children ',
             style: TextStyle(
                 color: Colors.blue, fontSize: 16, fontWeight: FontWeight.w500),
           ),
@@ -25,7 +24,13 @@ class NationalityDropdownList extends StatelessWidget {
           ),
           InkWell(
               onTap: () {
-                const NationalityDropdown();
+                showModalBottomSheet(
+                  context: context,
+                  isScrollControlled: true,
+                  builder: (context) {
+                    return BottomSheetApp();
+                  },
+                );
               },
               child: const Icon(Icons.keyboard_arrow_down_sharp))
         ],

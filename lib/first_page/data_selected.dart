@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class SimpleDatePicker extends StatefulWidget {
+  const SimpleDatePicker({super.key});
+
   @override
   _SimpleDatePickerState createState() => _SimpleDatePickerState();
 }
@@ -65,18 +68,19 @@ class _SimpleDatePickerState extends State<SimpleDatePicker>
             child:  Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(width: 20,),
-               // Text('Open Date Range Picker', ),
-                Text(
-                  ' ${_startDate.value?.toString() }==> '
-                      ,
-                  style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.w500
-                  ),
+                const SizedBox(
+                  width: 20,
                 ),
-                Spacer(),
-                Icon(Icons.clear,color: Colors.blue),
+                Text(
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                  '${DateFormat('yyyy-MM-dd').format(_startDate.value!)} ==> '
+                  '${DateFormat('yyyy-MM-dd').format(_endDate.value!)}',
+                  style: const TextStyle(
+                      color: Colors.blue, fontWeight: FontWeight.w500),
+                ),
+                const Spacer(),
+                const Icon(Icons.clear, color: Colors.blue),
               ],
             ),
 
