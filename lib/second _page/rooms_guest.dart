@@ -1,8 +1,8 @@
-import 'package:assignment_task/second%20_page/switch-page.dart';
-import 'package:assignment_task/second%20_page/room-add.dart';
+import 'package:assignment_task/second%20_page/switch_page.dart';
+import 'package:assignment_task/second%20_page/room_add.dart';
 import 'package:flutter/material.dart';
 
-import 'number-of-adult.dart';
+import 'number_of_adult.dart';
 
 class BottomSheetApp extends StatelessWidget {
   const BottomSheetApp({super.key});
